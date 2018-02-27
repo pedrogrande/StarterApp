@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dxntipklq
+  api_key: '856914287673147'
+  api_secret: "-aJUlfSIBTNCerbFy3aH9gi6G3c"
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dxntipklq
+  api_key: '856914287673147'
+  api_secret: "-aJUlfSIBTNCerbFy3aH9gi6G3c"
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dxntipklq
+  api_key: '856914287673147'
+  api_secret: "-aJUlfSIBTNCerbFy3aH9gi6G3c"
+  enhance_image_tag: true
+  static_image_support: false
