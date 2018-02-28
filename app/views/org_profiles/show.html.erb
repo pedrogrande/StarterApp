@@ -1,0 +1,54 @@
+<style>
+   #map {
+    height: 200px;
+    width: 100%;
+    border: 3px solid #888;
+    border-radius: 5px;
+   }
+</style>
+
+<div class="container mt-5">
+      <div class="card">
+        <div class="card-body">
+        <div class="row">
+          <div class="col-1">
+            <img src="<%= @org_profile.logo %>" alt="" class="img-fluid img-thumbnail">
+        </div>
+        <div class="col-6">
+          <h5 class="card-title"><%= @org_profile.name %> <br><span class="small text-muted text-uppercase"> <%= @org_profile.full_address %></span> </h5>
+          <p class="card-text"><%= @org_profile.description %></p>
+
+          <% if @org_profile.user == current_user %>
+            <p>
+              <%= link_to 'Edit', edit_org_profile_path(@org_profile), class: 'btn btn-outline-warning btn-sm' %>
+            </p>
+          <% end %>
+        </div>
+        <div class="col-5">
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8" id="portfolio-items">
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function initMap() {
+    var location = {lat: <%= @org_profile.latitude %>, lng: <%= @org_profile.longitude %>};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 14,
+      center: location
+    });
+    var marker = new google.maps.Marker({
+      position: location,
+      map: map
+    });
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACauRNCvDx2boerHbrQAHtnxsuaIjd4qo&callback=initMap">
+</script>

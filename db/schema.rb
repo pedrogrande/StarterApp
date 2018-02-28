@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227235440) do
+ActiveRecord::Schema.define(version: 20180228022340) do
 
   create_table "enquiries", force: :cascade do |t|
     t.string "name"
@@ -59,6 +59,28 @@ ActiveRecord::Schema.define(version: 20180227235440) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_links_on_user_id"
+  end
+
+  create_table "org_profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "name"
+    t.string "logo"
+    t.string "contact_name"
+    t.string "contact_phone"
+    t.text "description"
+    t.string "slug"
+    t.string "link"
+    t.string "address"
+    t.string "suburb"
+    t.string "state"
+    t.string "postcode"
+    t.string "country"
+    t.float "longitude"
+    t.float "latitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_org_profiles_on_slug", unique: true
+    t.index ["user_id"], name: "index_org_profiles_on_user_id"
   end
 
   create_table "portfolio_items", force: :cascade do |t|

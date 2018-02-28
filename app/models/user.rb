@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_one :freelancer_profile
   has_many :links
   has_many :portfolio_items
+  has_one :org_profile
 
   rolify
   # Include default devise modules. Others available are:
@@ -10,6 +11,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   after_create :assign_role
+  
 
   def assign_role
     self.add_role self.user_type.to_sym
