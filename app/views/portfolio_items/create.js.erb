@@ -1,0 +1,3 @@
+$('#portfolio-items').append('<%= j render partial: "portfolio_items/portfolio_item", locals: { portfolio_item: @portfolio_item } %>');
+$('#new-portfolio-item').modal('hide');
+$('#new_portfolio_item')[0].reset();
