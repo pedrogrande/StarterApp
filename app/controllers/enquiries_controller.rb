@@ -5,7 +5,11 @@ class EnquiriesController < ApplicationController
   # GET /enquiries
   # GET /enquiries.json
   def index
-    @enquiries = Enquiry.all
+    if params[:sort]
+      @enquiries = Enquiry.chron_order_sort(params[:sort])
+    else
+      @enquiries = Enquiry.all
+    end
   end
 
   # GET /enquiries/1

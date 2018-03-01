@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :proposals
+  resources :messages
+  resources :gigs
+  resources :gig_types
   resources :org_profiles
   resources :portfolio_items
   resources :links
@@ -7,6 +11,7 @@ Rails.application.routes.draw do
   get 'contact', to: 'pages#contact'
   get 'about', to: 'pages#about'
   get 'privacy', to: 'pages#privacy'
+  resources :charges
 
   devise_for :users, controllers: { registrations: "registrations" }
   root 'home#index'

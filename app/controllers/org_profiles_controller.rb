@@ -10,6 +10,7 @@ class OrgProfilesController < ApplicationController
   # GET /org_profiles/1
   # GET /org_profiles/1.json
   def show
+    @gig = Gig.new
   end
 
   # GET /org_profiles/new

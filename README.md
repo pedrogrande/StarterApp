@@ -1,5 +1,15 @@
 # README
 
+rails g scaffold GigType icon name description color
+rails g scaffold Gig user:belongs_to gig_type:belongs_to name description:text deadline:date status
+
+pending
+paid
+approved or rejected
+assigned or expired
+completed
+reviewed
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

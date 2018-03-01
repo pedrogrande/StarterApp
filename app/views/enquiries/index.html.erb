@@ -2,7 +2,11 @@
 
 <h1>Enquiries</h1>
 
-<table>
+<%= link_to '<i class="fa fa-caret-up"></i>'.html_safe, enquiries_path(sort: 'asc'), class: 'btn btn-outline-info' %>
+
+<%= link_to '<i class="fa fa-caret-down"></i>'.html_safe, enquiries_path(sort: 'desc'), class: 'btn btn-outline-info' %>
+
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,7 +25,7 @@
         <td><%= enquiry.subject %></td>
         <td><%= enquiry.message %></td>
         <td><%= link_to 'Show', enquiry %></td>
-        <td><%= link_to 'Edit', edit_enquiry_path(enquiry) %></td>
+        <td><%= time_ago_in_words(enquiry.created_at) %> ago</td>
         <td><%= link_to 'Destroy', enquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

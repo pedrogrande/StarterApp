@@ -1,0 +1,21 @@
+<%= simple_form_for(@gig, remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs mb-5">
+    <%= f.association :gig_type %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <div class="form-group date required gig_deadline">
+      <label class="control-label date required" for="gig_deadline_1i">
+        <abbr title="required">*</abbr> Deadline
+      </label>
+      <div class="form-inline">
+        <%= f.date_field :deadline, class: 'form-control', hint: 'Deadline must be more than 30 days in the future.', error: 'Date is less than 30 days in the future.' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit "List gig", class: 'btn btn-outline-success' %>
+  </div>
+<% end %>

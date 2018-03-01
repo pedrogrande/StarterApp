@@ -12,5 +12,4 @@ class OrgProfile < ApplicationRecord
   def full_address
     [address, suburb, state, postcode, country].join(', ')
   end
-
 end
