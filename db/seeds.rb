@@ -19,3 +19,6 @@ unless GigType.all.any?
     puts "Gig type created: " + type.name
   end
 end
+
+user = User.create(email: 'admin@example.com', password: '12345678', user_type: 'admin')
+puts "Admin user created: " + user.email 

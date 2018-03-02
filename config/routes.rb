@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'admin', to: 'admin#index'
+
   resources :proposals
   resources :messages
   resources :gigs
